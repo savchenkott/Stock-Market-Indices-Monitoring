@@ -19,11 +19,12 @@ def main():
         database.db_update()
     else:
         database.db_creation(interval=START_X_PERIODS_AGO, period=START_X_UNIT)
+    print("ok")
 
 
 
 if __name__ == "__main__":
-    for run_time in ["01:05", "07:05", "13:05", "19:05", "23:05"]:
+    for run_time in ["01:05", "07:05", "13:05", "16:03", "19:05", "23:05"]:
         schedule.every().day.at(run_time).do(main)
     while True:
         schedule.run_pending()

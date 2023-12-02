@@ -33,7 +33,7 @@ def db_creation(interval, period):
 
 
 def db_update():
-    connection, cursor, engine = get_connection(params=PARAMS_DEFAULT, link = LINK_DEFAULT)
+    connection, cursor, engine = get_connection(params=PARAMS_DEFAULT, link=LINK_DEFAULT)
     index_scraping.update_indexes_prices_table(connection=connection, engine=engine, cursor=cursor, table_name=TABLE_NAME_DEFAULT,
                                                         frequency=FREQUENCY_DEFAULT)
     connection.close()
