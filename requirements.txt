@@ -22,6 +22,5 @@ filelock~=3.13.1
 setuptools~=68.2.2
 MarkupSafe~=1.1.1
 simplejson~=3.19.2
-future~=0.18.2
 platformdirs~=3.11.0
 python-dotenv~=1.0.0
