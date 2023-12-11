@@ -155,7 +155,7 @@ def update_indexes_prices_table(connection, engine, cursor, table_name, frequenc
 
         delete_yesterdays_query = f"""
                             DELETE FROM {table_name}
-                            WHERE date = (SELECT date 
+                            WHERE date IN (SELECT date 
                             FROM {table_name} 
                             WHERE (date >= '{start_date}' 
                             AND (date NOT IN (SELECT date FROM {i}_{suffix})))) 
