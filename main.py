@@ -6,7 +6,6 @@ from config.consts import PARAMS_DEFAULT, START_X_PERIODS_AGO, START_X_UNIT, TAB
 
 
 def main():
-    print("Start")
     conn = psycopg2.connect(**PARAMS_DEFAULT)
     cur = conn.cursor()
     cur.execute(f"""
@@ -24,10 +23,11 @@ def main():
 
 
 if __name__ == "__main__":
-    for run_time in ["01:05", "07:05", "13:05", "19:05", "23:05"]:
+    for run_time in ["01:05", "07:05", "13:05","19:05", "23:05"]:
         schedule.every().day.at(run_time).do(main)
     while True:
         schedule.run_pending()
         time.sleep(10)
+
 
 
